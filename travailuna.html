@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Travailuna</title>
+</head>
+<body>
+ <h1>Perroquet</h1>
+ <!--textbox pour nourritue-->
+  <label for="txtNourt">Votre nourriture préférée:</label>
+  <input type="text" id="txtNourt"
+ 
+  <br><br>
+ 
+ <!--radio button pour couleur-->
+ <label for="selCouleur">Votre couleur préféreé:</label>
+  <select id="selCouleur">
+    <option value="bleue">Bleue</option>
+    <option value="rouge">Rouge</option>
+    <option value="vert">Vert</option>
+    <option value="jaune">Jaune</option>
+ 
+ 
+  <br><br>
+ 
+ <!--select pour matiere-->
+<label for="radMat">La matiere que vous préférée:</label>
+    <input type="radio" name="matiere" id="radMat" value="Sports">Sports
+    <input type="radio" name="matiere" id="radMat" value="sciences" checked>Sciences
+    <input type="radio" name="matiere" id="radMat" value="langues">Langues
+ 
+<br><br>
+ 
+<!--boutton pour terminer-->
+ <input type="button" id="btnTerminer" onclick="confirmePerroquet()" value="Terminer">
+ 
+ <!-- Création d'une section pour l'affichage -->
+    <div id="divAffiche">
+    </div>
+ 
+ 
+ 
+ 
+<script>
+        function confirmePerroquet() {
+            //Chercher les données dans le formulaire
+            var nourriture = document.getElementById("txtNourt").value;
+            var couleur = document.getElementById("selCouleur");
+            var affiche = document.getElementById("divAffiche");
+            var radiosMat = document.getElementsByName("matiere");
+            //Variable pour stocker l'année choisie
+            var matiere = "";
+            for (var i = 0; i < radiosMat.length; i++) {
+              if (radiosMat[i].checked) {
+                  matiere = radiosMat[i].value;
+              }
+            }
+ 
+ 
+ 
+          
+            //Construire le message à afficher
+            var message = "<br><br>WOW, moi aussi j'aime" + couleur + "! <br><br>" +
+                            "Comment on est similaire, moi aussi ma matiere préférée est " + matiere +
+                            "et la nourriture que je préfere le plus c'est " + nourriture + ".";
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+    </script>
+  </form>
+</body>
+</html>
+ 
