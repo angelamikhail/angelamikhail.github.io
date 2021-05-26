@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QuizICS</title>
+</head>
+<body>
+
+  <h1><u>Quiz ICS niveau 1:  /3</u></h1>
+  
+  
+    
+
+  <!--radio button pour choix--><br>
+  <label for="radQ1">1- Le boitier qui contient les principaux composant de l'ordinateur est appelé: (2pt)</label><br>
+  <br>
+  <input type="radio" name="choix" id="radQ1" value="coeur">Le coeur 
+  <input type="radio" name="choix" id="radQ1" value="tour">La tour 
+  <input type="radio" name="choix" id="radQ1" value="contenant" checked>Le contenant 
+  <input type="radio" name="choix" id="radQ1" value="barre">La barre
+  <br>
+
+
+
+  <!--textbox de la réponse--><br>
+  <label for="txtQ2">2- En quoi est mesurer la capacité d'une unité de stockage? (1pt)</label> <input type="text" id="txtQ2"><br>
+
+
+
+  <!--select vrai ou faux-->
+  <br>
+  <label for="selQ3">3- Est-ce que le casque écouteur est un périphériques?(1pt)</label><br>
+  <br>
+  <select id="selQ3">
+    <option value="V">Vrai</option>
+    <option value="F">Faux</option><br><br>
+
+
+    <br><br>
+
+<input type="button" id="btnSoumet" onclick="confirmeQuiz()"  value="Soumettre votre quiz">
+ 
+     <!-- Création d'une section pour l'affichage des résultats -->
+     <div id="divAffiche">
+ 
+     </div>
+
+
+     <script>
+         function confirmeQuiz() {
+             var repd = document.getElementById("txtQ2").value;
+             var rept = document.getElementById("selQ3").value;
+             var affiche = document.getElementById("divAffiche");
+             //Pour déterminer lequel des radio buttons est coché
+             var radiosQ1 = document.getElementsByName("choix");
+             var choix = "";
+             for (var i = 0; i < radiosQ1.length; i++) {
+               if (radiosQ1[i].checked) {
+                   Q1 = radiosQ1[i].value;
+               }
+             }
+
+
+
+             var message = "<br><br>Bonjour ";
+             //Afficher le message sur la page web
+             affiche.innerHTML = message;
+         }
+     </script
+
+
+  </select>
+</body>
+</html>
