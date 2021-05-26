@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Formes</title>
+</head>
+<body>
+ <h1>Formes d'astériques</h1>
+
+<!--radio button pour formes d'astériques-->
+<label for="radForme">Formes:</label>
+<br><br>
+<input type="radio" name="forme" id="radForme" value="Forme1">Forme 1
+<br><br>
+<input type="radio" name="forme" id="radForme" value="Forme2">Forme 2
+<br><br>
+<input type="radio" name="forme" id="radForme" value="Forme3">Forme 3
+<br><br>
+<input type="radio" name="forme" id="radForme" value="Forme4">Forme 4
+<br><br>
+
+<!--boutton pour terminer-->
+ <input type="button" id="btnAffficher" onclick="confirmeForme()" value="Afficher">
+ 
+ <!-- Création d'une section pour l'affichage -->
+    <div id="divAffiche">
+    </div>
+
+
+    <script>
+        function confirmeFormet() {
+            //Chercher les données dans le formulaire
+            var affiche = document.getElementById("divAffiche");
+            var radiosForme = document.getElementsByName("radForme");
+            //Variable pour stocker l'année choisie
+            var forme1 = "";
+            for (let i = 1; i <= 10; i++) {
+              var asterisques = "";
+ 
+ for (let j = 1; j <= i; j++) {
+     asterisques = asterisques + "*";
+ } 
+}
+
+var forme2 = "";
+for (let i = 10; i >= 1; i--) {
+ var asterisques = "";
+ 
+ for (let j = 1; j <= i; j++) {
+     asterisques = asterisques + "*";
+ }
+}
+
+
+var forme3 = "";
+for (let i = 1; i <= 10; i++) {
+  var asterisques = "";
+  var espaces = "";
+
+  for (let j = 1; j <= i-1; j++) {
+     espaces = espaces + " ";
+  }
+  for (let j = 1; j <= 11-i; j++) {
+     asterisques = asterisques + "*";
+  }
+}
+
+
+var forme4 = "";
+for (let i = 1; i <= 10; i++) {
+  var asterisques = "";
+  var espaces = "";
+  for (let j = 1; j <= 10-i; j++) {
+     espaces = espaces + " ";
+  }
+  for (let j = 1; j <= i; j++) {
+     asterisques = asterisques + "*";
+  }
+}
+
+
+
+            
+
+          
+            //Construire le message à afficher
+            var afficher1 = "<br><brForme 1: " + forme1 + <br><br>";
+            var afficher2 = "<br><brForme 2: " + forme2 + <br><br>";
+            var afficher3 = "<br><brForme 3: " + forme3 + <br><br>";
+            var afficher4 = "<br><brForme 4: " + forme4 + <br><br>";
+            
+            //Afficher la forme sur la page web
+            affiche.innerHTML = afficher1;
+            affiche.innerHTML = afficher2;
+            affiche.innerHTML = afficher3;
+            affiche.innerHTML =afficher4;
+        }
+    </script>
+  </form>
+</body>
+</html>
