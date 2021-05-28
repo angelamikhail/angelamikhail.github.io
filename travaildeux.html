@@ -34,17 +34,17 @@
            var prenom = document.getElementById("txtPrenom").value;
            var nom_du_milieu = document.getElementById("txtNomDuMilieu").value;
            var nom_de_famille = document.getElementById("txtNomDeFamille").value;
- 
+           var affiche = document.getElementById("divAffiche");
            //Le message à afficher
-           var message1 = "<br><br> Initiales: " + prenom.charAt(0) + nom_du_milieu.charAt(0) + nom_de_famille.charAt(0) + "<br><br>"
-           var message2 = "<br><br> Nom au complet: " + prenom + nom_du_milieu + nom_de_famille + "<br><br>"
-           var message3 = "<br><br> Nom de l'utilisateur: " + prenom.charAt(0) + nom_du_milieu.charAt(0) + nom_de_famille + "<br><br>"
+           var message1 = "<br>Initiales: " + prenom.charAt(0) + "." + nom_du_milieu.charAt(0) + "." + nom_de_famille.charAt(0) + "<br>"
+           var message2 = "<br>Nom au complet: " + prenom + nom_du_milieu + nom_de_famille + "<br>"
+           var message3 = "<br>Nom de l'utilisateur: " + prenom.charAt(0) + nom_du_milieu.charAt(0) + nom_de_famille + "<br>"
            //Afficher le message sur la page web
-           affiche.innerHTML = message1;
+           affiche.innerHTML = message1 + message2 + message3;
            //Afficher le message sur la page web
-           affiche.innerHTML = message2;
+           //affiche.innerHTML = message2;
            //Afficher le message sur la page web
-           affiche.innerHTML = message3;
+           //affiche.innerHTML = message3;
             }
  
            
