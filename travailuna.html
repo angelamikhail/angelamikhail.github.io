@@ -48,8 +48,7 @@
             var couleur = document.getElementById("selCouleur");
             var affiche = document.getElementById("divAffiche");
             var radiosMat = document.getElementsByName("btnmatiere");
-            //Variable pour stocker l'année choisie
-            var matiere = "";
+            var matiere = document.getElementById("radMat").value;
             for (var i = 0; i < radiosMat.length; i++) {
               if (radiosMat[i].checked) {
                   matiere = radiosMat[i].value;
