@@ -6,34 +6,37 @@
 </head>
 <body>
  <h1>Perroquet</h1>
- <!--textbox pour nourritue-->
-  <label for="txtNourt">Votre nourriture préférée:</label>
-  <input type="text" id="txtNourt"
- 
-  <br><br>
- 
- <!--select pour couleur-->
- <label for="selCouleur">Votre couleur préféreé:</label>
-  <select id="selCouleur">
-    <option value="bleue">Bleue</option>
-    <option value="rouge">Rouge</option>
-    <option value="vert">Vert</option>
-    <option value="jaune">Jaune</option>
- 
- 
-  <br><br>
- 
- <!--radio button pour matiere-->
+
+
+  <!--radio button pour matiere-->
 <label for="radMat">La matiere que vous préférée:</label>
     <input type="radio" name="matiere" id="radMat" value="Sports">Sports
     <input type="radio" name="matiere" id="radMat" value="sciences" checked>Sciences
     <input type="radio" name="matiere" id="radMat" value="langues">Langues
+ <br><br>
+
+
+ <!--textbox pour nourritue-->
+  <label for="txtNourt">Votre nourriture préférée:</label>
+  <input type="text" id="txtNourt"
+  <br><br>
  
+
+ <!--select pour couleur-->
+ <label for="selCouleur">Votre couleur préféreé:</label>
+  <select id="selCouleur"><br><br>
+    <option value="bleue">Bleue</option>
+    <option value="rouge">Rouge</option>
+    <option value="vert">Vert</option>
+    <option value="jaune">Jaune</option>
 <br><br>
  
+
+
 <!--boutton pour terminer-->
- <input type="button" id="btnTerminer" onclick="confirmePerroquet()" value="Terminer">
+ <br><br><input type="button" id="btnTerminer" onclick="confirmePerroquet()" value="Terminer">
  
+
  <!-- Création d'une section pour l'affichage -->
     <div id="divAffiche">
     </div>
@@ -43,15 +46,16 @@
  
 <script>
         function confirmePerroquet() {
-            //Chercher les données dans le formulaire
-            var nourriture = document.getElementById("txtNourt").value;
-            var couleur = document.getElementById("selCouleur");
-            var affiche = document.getElementById("divAffiche");
-            var radiosMat = document.getElementsByName("btnmatiere");
-            var matiere = document.getElementById("radMat").value;
-            for (var i = 0; i < radiosMat.length; i++) {
-              if (radiosMat[i].checked) {
-                  matiere = radiosMat[i].value;
+          //Chercher les données dans le formulaire
+          var nourriture = document.getElementById("txtNourt").value;
+          var couleur = document.getElementById("selCouleur").value;
+          var affiche = document.getElementById("divAffiche");
+         
+          var radiosMat = document.getElementsByName("matiere");
+            var matiere;
+         
+          for (var i = 0; i < radiosMat.length; i++) {
+            if (radiosMat[i].checked) {                  matiere = radiosMat[i].value;
               }
             }
  
@@ -59,9 +63,9 @@
  
           
             //Construire le message à afficher
-            var message = "<br><br>WOW, moi aussi j'aime" + couleur + "! <br><br>" +
-                            "Comment on est similaire, moi aussi ma matiere préférée est " + matiere +
-                            "et la nourriture que je préfere le plus c'est " + nourriture + ".";
+            var message = "<br><br>WOW, moi aussi j'aime la couleur " + couleur + "! <br>" +
+                            "Comme on est similaire, moi aussi ma matiere préférée est " + matiere +
+                            " et la nourriture que je préfere le plus c'est " + nourriture + ".";
             //Afficher le message sur la page web
             affiche.innerHTML = message;
         }
@@ -69,4 +73,3 @@
   </form>
 </body>
 </html>
- 
